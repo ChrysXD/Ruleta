@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title> Ruleta</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<script src="js/Winwheel.min.js"></script>
+		<script src="js/TweenMax.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/estilos.css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet"> 
+		<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+		<link rel="shortcut icon" type="image-x/icon" href="img/ruleta.ico">
+	</head>
+
+	<body>
+		<div class="contenedor">
+			
+			<canvas id="canvas" height="490" width="490" style="background:url(img/ruleta.png); background-repeat: no-repeat; position: center; background-size: 79.6%; background-position: center;"></canvas>
+		</div>
+		<div class="imagen-contenedora">
+			
+		</div>
+		<div class="seleccion">
+				<input type="button" class="button" value="Inicio" onclick="girar();resetMiRuleta(); miRuleta.startAnimation();">
+				<h1 id="conteo" class="conteo"></h1>
+				<div class="contenedor2">
+					<form action="">
+						<div class="selectbox">
+							<div class="select" id="select">
+								<div class="contenido-select">
+									<h1 class="titulo">Selecciona la casilla</h1>
+									<p class="descripcion">Debes de seleccionar la casilla</p>
+								</div>
+								<i class="fas fa-angle-down"></i>
+							</div>
+
+							<div class="opciones" id="opciones">
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion1();">
+										<img src="img/amarillo.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Amarillo</h1>
+											<p class="descripcion">La posición número 1 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion2();">
+										<img src="img/azul.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Azul</h1>
+											<p class="descripcion">La posición número 2 de la ruleta</p>
+										</div>
+									</div>
+									<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion3();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 3 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion4();">
+										<img src="img/rojo.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Rojo</h1>
+											<p class="descripcion">La posición número 4 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion5();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 5 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion6();">
+										<img src="img/rojo.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Rojo</h1>
+											<p class="descripcion">La posición número 6 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion7();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 7 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion8();">
+										<img src="img/rojo.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Rojo</h1>
+											<p class="descripcion">La posición número 8 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion9();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 9 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion10();">
+										<img src="img/azul.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Azul</h1>
+											<p class="descripcion">La posición número 10 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion11();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 11 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion12();">
+										<img src="img/azul.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Azul</h1>
+											<p class="descripcion">La posición número 12 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion13();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 13 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion14();">
+										<img src="img/rojo.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Rojo</h1>
+											<p class="descripcion">La posición número 14 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion15();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 15 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion16();">
+										<img src="img/rojo.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Rojo</h1>
+											<p class="descripcion">La posición número 16 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion17();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 17 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion18();">
+										<img src="img/rojo.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Rojo</h1>
+											<p class="descripcion">La posición número 18 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion19();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 19 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion20();">
+										<img src="img/azul.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Azul</h1>
+											<p class="descripcion">La posición número 20 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion21();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 21 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion22();">
+										<img src="img/azul.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Azul</h1>
+											<p class="descripcion">La posición número 22 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion23();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 23 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion24();">
+										<img src="img/rojo.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Rojo</h1>
+											<p class="descripcion">La posición número 24 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion25();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 25 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion26();">
+										<img src="img/rojo.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Rojo</h1>
+											<p class="descripcion">La posición número 26 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion27();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 27 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion28();">
+										<img src="img/rojo.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Rojo</h1>
+											<p class="descripcion">La posición número 28 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion29();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 29 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion30();">
+										<img src="img/rojo.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Rojo</h1>
+											<p class="descripcion">La posición número 30 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion31();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 31 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion32();">
+										<img src="img/rojo.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Rojo</h1>
+											<p class="descripcion">La posición número 32 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion33();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 33 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion34();">
+										<img src="img/azul.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Azul</h1>
+											<p class="descripcion">La posición número 34 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion35();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 35 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion36();">
+										<img src="img/azul.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Azul</h1>
+											<p class="descripcion">La posición número 36 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion37();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 37 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion38();">
+										<img src="img/rojo.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Rojo</h1>
+											<p class="descripcion">La posición número 38 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion39();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 39 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion40();">
+										<img src="img/rojo.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Rojo</h1>
+											<p class="descripcion">La posición número 40 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion41();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 41 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion42();">
+										<img src="img/rojo.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Rojo</h1>
+											<p class="descripcion">La posición número 42 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion43();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 43 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion44();">
+										<img src="img/azul.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Azul</h1>
+											<p class="descripcion">La posición número 44 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion45();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 45 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion46();">
+										<img src="img/azul.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Azul</h1>
+											<p class="descripcion">La posición número 46 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion47();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 47 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion48();">
+										<img src="img/rojo.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Rojo</h1>
+											<p class="descripcion">La posición número 48 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion49();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 49 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion50();">
+										<img src="img/rojo.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Rojo</h1>
+											<p class="descripcion">La posición número 50 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion51();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 51 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion52();">
+										<img src="img/rojo.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Rojo</h1>
+											<p class="descripcion">La posición número 52 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion53();">
+										<img src="img/gris.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Gris</h1>
+											<p class="descripcion">La posición número 53 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+								<a href="#" class="opcion">
+									<div class="contenido-opcion" onclick="Funcion54();">
+										<img src="img/azul.png" alt="">
+										<div class="textos">
+											<h1 class="titulo">Azul</h1>
+											<p class="descripcion">La posición número 54 de la ruleta</p>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+
+			<input type="hidden" name="pais" id="inputSelect" value="">
+		</form>
+
+	</div>
+			
+		
+		<div id="sonido">
+
+			<iframe src="audio/girar.mp3" id="audio" style="display: none;"></iframe>
+
+		</div>
+		<script src="js/main.js"></script>
+		<script src="js/11.js"></script>	
+		<script src="js/cargar.js"></script>
+		<script src="js/Reset.js"></script>
+	</body>
+</html>
